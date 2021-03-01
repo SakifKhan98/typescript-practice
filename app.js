@@ -16,3 +16,74 @@ var person = {
     isCaptain: true,
 };
 person.name = "Mashrafi";
+//union
+//variable
+var a;
+a = "bad";
+//array
+var b = [];
+b.push(6);
+//object
+var c;
+c = {
+    name: "John",
+    email: "john@example.com",
+    age: 34,
+};
+//dynamic type || any type
+var d;
+d = 5;
+d = "badPractice";
+//functions
+var myFunct;
+myFunct = function () {
+    console.log("Noice!!!");
+};
+var myFunction = function (a, b, c) {
+    if (b === void 0) { b = "goodPractice"; }
+    //c is optional parameter
+    //b has default value
+    console.log("Hello " + a + " there! " + b);
+    return a + b;
+};
+myFunction("Nomad", "Samcro");
+var userDetails = function (id, user) {
+    console.log("user Id is " + id + ", Name is: " + user.name + " and age is: " + user.age + " ");
+};
+var sayHello = function (user) {
+    console.log("Hello " + (user.age > 50 ? "Sir" : "Mr.") + " " + user.name);
+};
+//Function Signature
+var add;
+add = function (a, b) {
+    var result = a + b;
+    return result;
+};
+var calculation;
+calculation = function (a, b, c) {
+    if (c === "add") {
+        return a + b;
+    }
+    if (c === "multiply") {
+        return a * b;
+    }
+    return;
+};
+//classes
+var Player = /** @class */ (function () {
+    function Player(n, a, c) {
+        this.name = n;
+        this.age = a;
+        this.country = c;
+    }
+    Player.prototype.play = function () {
+        console.log("Player " + this.name + " from " + this.country + " is playing");
+    };
+    return Player;
+}());
+var Mashrafi = new Player("Mashrafi", 34, "Bangladesh");
+var Sakib = new Player("Sakib", 30, "Bangladesh");
+var players = [];
+players.push(Mashrafi, Sakib);
+console.log(players);
+//Access Modifiers
