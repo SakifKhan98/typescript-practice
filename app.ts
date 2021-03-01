@@ -95,17 +95,13 @@ calculation = (a: number, b: number, c: string) => {
   return;
 };
 
-//classes
+//classes && //Access Modifiers
 class Player {
-  name: string;
-  age: number;
-  country: string;
-
-  constructor(n: string, a: number, c: string) {
-    this.name = n;
-    this.age = a;
-    this.country = c;
-  }
+  constructor(
+    private name: string,
+    public age: number,
+    readonly country: string
+  ) {}
 
   play() {
     console.log(`Player ${this.name} from ${this.country} is playing`);
@@ -117,5 +113,3 @@ const Sakib = new Player("Sakib", 30, "Bangladesh");
 const players: Player[] = [];
 players.push(Mashrafi, Sakib);
 console.log(players);
-
-//Access Modifiers

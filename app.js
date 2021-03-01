@@ -69,12 +69,12 @@ calculation = function (a, b, c) {
     }
     return;
 };
-//classes
+//classes && //Access Modifiers
 var Player = /** @class */ (function () {
-    function Player(n, a, c) {
-        this.name = n;
-        this.age = a;
-        this.country = c;
+    function Player(name, age, country) {
+        this.name = name;
+        this.age = age;
+        this.country = country;
     }
     Player.prototype.play = function () {
         console.log("Player " + this.name + " from " + this.country + " is playing");
@@ -86,4 +86,3 @@ var Sakib = new Player("Sakib", 30, "Bangladesh");
 var players = [];
 players.push(Mashrafi, Sakib);
 console.log(players);
-//Access Modifiers
