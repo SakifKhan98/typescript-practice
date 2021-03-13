@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 //function
 function multiply(a, b) {
     return a * b;
@@ -86,3 +97,49 @@ var Sakib = new Player("Sakib", 30, "Bangladesh");
 var players = [];
 players.push(Mashrafi, Sakib);
 console.log(players);
+function drawRectangle(options) {
+    var width = options.width;
+    var height = options.height;
+}
+drawRectangle({
+    height: 50,
+    width: 60,
+});
+//Generics
+var addID = function (obj) {
+    var id = Math.floor(Math.random() * 100);
+    return __assign(__assign({}, obj), { id: id });
+};
+var user = addID({
+    name: "Mashrafi",
+    age: 40,
+    country: "Bangladesh",
+});
+addID(user);
+//Generics with Interface
+// interface APIResponse<T> {
+//   status: number;
+//   type: string;
+//   data: T;
+// }
+// const response1: APIResponse<string> = {
+//   status: 200,
+//   type: "good",
+//   data: "test",
+// };
+//Enum
+var RType;
+(function (RType) {
+    RType[RType["SUCCESS"] = 0] = "SUCCESS";
+    RType[RType["FAILURE"] = 1] = "FAILURE";
+    RType[RType["UNAUTHENTICATED"] = 2] = "UNAUTHENTICATED";
+    RType[RType["FORBIDDEN"] = 3] = "FORBIDDEN";
+})(RType || (RType = {}));
+var response1 = {
+    status: 200,
+    type: RType.SUCCESS,
+    data: "test",
+};
+//Tuples
+var ax = [3, "hello", { p: 3 }];
+var bx = [4, "ad", { t: 1 }];

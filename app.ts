@@ -113,3 +113,74 @@ const Sakib = new Player("Sakib", 30, "Bangladesh");
 const players: Player[] = [];
 players.push(Mashrafi, Sakib);
 console.log(players);
+
+//Interface
+interface rectangleOptions {
+  height: number;
+  width: number;
+}
+
+function drawRectangle(options: rectangleOptions) {
+  let width = options.width;
+  let height = options.height;
+}
+
+drawRectangle({
+  height: 50,
+  width: 60,
+});
+
+//Generics
+
+const addID = <T extends { name: string; age: number }>(obj: T) => {
+  let id = Math.floor(Math.random() * 100);
+  return { ...obj, id };
+};
+
+let user = addID({
+  name: "Mashrafi",
+  age: 40,
+  country: "Bangladesh",
+});
+
+addID(user);
+
+//Generics with Interface
+
+// interface APIResponse<T> {
+//   status: number;
+//   type: string;
+//   data: T;
+// }
+
+// const response1: APIResponse<string> = {
+//   status: 200,
+//   type: "good",
+//   data: "test",
+// };
+
+//Enum
+
+enum RType {
+  SUCCESS,
+  FAILURE,
+  UNAUTHENTICATED,
+  FORBIDDEN,
+}
+interface APIResponse<T> {
+  status: number;
+  type: RType;
+  data: T;
+}
+
+const response1: APIResponse<string> = {
+  status: 200,
+  type: RType.SUCCESS,
+  data: "test",
+};
+
+//Tuples
+
+let ax = [3, "hello", { p: 3 }];
+
+let bx: [number, string, object] = [4, "ad", { t: 1 }];
